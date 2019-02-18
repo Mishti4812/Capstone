@@ -49,13 +49,12 @@ namespace flashCards
             }
             return (dSet);
         }
-       /* public DataSet GetListOfSubjectsCategories()
+        public DataSet GetListOfFlashcards()
         {
             SqlConnection cn = null;
             SqlCommand cmd = null;
             SqlDataAdapter sda = null;
             DataSet dSet = null;
-            
 
             try
             {
@@ -67,25 +66,11 @@ namespace flashCards
                 cmd = new SqlCommand();
                 cmd.Connection = cn;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "USP_GetListOfSubjectsCatagory";
-
-                // Category = "physics";
-                if (Category == null)
-                {
-                    string cat = "chemistry";
-                    cmd.Parameters.AddWithValue("@category", cat);
-                }
-
-                else
-                {
-
-
-                    cmd.Parameters.AddWithValue("@category", Category);
-                }
+                cmd.CommandText = "USP_GetListOfFlashcards";
 
                 sda = new SqlDataAdapter(cmd);
-                dSet = new DataSet("categories");
-                sda.Fill(dSet, "category");
+                dSet = new DataSet("flashcards");
+                sda.Fill(dSet, "flashcard");
             }
             catch (Exception ex)
             {
@@ -93,7 +78,51 @@ namespace flashCards
             }
             return (dSet);
         }
-        */
+        /* public DataSet GetListOfSubjectsCategories()
+         {
+             SqlConnection cn = null;
+             SqlCommand cmd = null;
+             SqlDataAdapter sda = null;
+             DataSet dSet = null;
+
+
+             try
+             {
+                 cn = new SqlConnection();
+
+                 // cn.ConnectionString = GetConnectionString();
+                 cn.ConnectionString = "data source =.; initial catalog = flaschcard; integrated security = true; ";
+
+                 cmd = new SqlCommand();
+                 cmd.Connection = cn;
+                 cmd.CommandType = CommandType.StoredProcedure;
+                 cmd.CommandText = "USP_GetListOfSubjectsCatagory";
+
+                 // Category = "physics";
+                 if (Category == null)
+                 {
+                     string cat = "chemistry";
+                     cmd.Parameters.AddWithValue("@category", cat);
+                 }
+
+                 else
+                 {
+
+
+                     cmd.Parameters.AddWithValue("@category", Category);
+                 }
+
+                 sda = new SqlDataAdapter(cmd);
+                 dSet = new DataSet("categories");
+                 sda.Fill(dSet, "category");
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception(ex.Message);
+             }
+             return (dSet);
+         }
+         */
 
 
         public int create_Flashcard()

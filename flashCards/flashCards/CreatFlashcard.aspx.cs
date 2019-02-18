@@ -84,6 +84,8 @@ namespace flashCards
         {
             Label7.Text = "";
             Button3.Visible = false;
+            Button2.Visible = true;
+            TextBox1.Visible = false;
         }
     }
    

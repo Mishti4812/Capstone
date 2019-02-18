@@ -26,23 +26,20 @@ namespace flashCards
                 
                   FlashcardCreate x = new FlashcardCreate();
                   DataSet dset = x.GetListOfCategories();
-                /*FlashcardCreate y = new FlashcardCreate();
-                DataSet dset1 = y.GetListOfSubjectsCategories();*/
-                
-
-
-
-
+               
 
                     DropDownList2.DataSource = dset;
                 DropDownList2.DataTextField = "category";
                 DropDownList2.DataValueField = "category";
                 DropDownList2.DataBind();
 
-                /*DropDownList3.DataSource = dset1;
-                DropDownList3.DataTextField = "subject";
-                DropDownList3.DataValueField = "subject";
-                DropDownList3.DataBind();*/
+               
+                FlashcardCreate y = new FlashcardCreate();
+                DataSet dset1 = y.GetListOfFlashcards();
+               
+                GridView2.Visible = false;
+                TextBox3.Visible = false;
+                Label5.Text = "<h3> Select a flashcard to study</h3>";
 
 
             }
@@ -62,12 +59,44 @@ namespace flashCards
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox1.Text = DropDownList2.SelectedValue.ToString();
+            //TextBox1.Text = DropDownList2.SelectedValue.ToString();
             /*FlashcardCreate y = new FlashcardCreate();
             DataSet dset1 = y.GetListOfSubjectsCategories();*/
 
             //y.Name = TextBox1.Text;
+            GridView2.Visible = true;
+        }
 
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //TextBox3.Text = DropDownList3.SelectedValue.ToString();
+        }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextBox3.Visible = true;
+            TextBox3.Text = GridView2.SelectedRow.Cells[1].Text;
+            Session["choice"] = TextBox3.Text;
+            Session["category"] = GridView2.SelectedRow.Cells[2].Text;
+            Session["subject"] = GridView2.SelectedRow.Cells[3].Text;
+            
+
+            Button4.Visible = true;
+
+
+
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Button4.Visible = false;
+            Response.Redirect("Study.aspx");
+            
+        }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Report.aspx");
         }
     }
     }

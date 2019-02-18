@@ -32,8 +32,7 @@
                     <asp:Label ID="Label1" runat="server" Text="UserName"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                </td>
+                    l</td>
                 <td colspan="2">&nbsp;</td>
             </tr>
             <tr>

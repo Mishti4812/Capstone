@@ -12,6 +12,9 @@
         .auto-style2 {
             width: 207px;
         }
+        .auto-style3 {
+            width: 88px;
+        }
     </style>
 </head>
 <body>
@@ -65,15 +68,21 @@
         <br />
         <table class="auto-style1">
             <tr>
-                <td>&nbsp;</td>
+                <td class="auto-style3">&nbsp;</td>
                 <td>
-                    <asp:Button ID="loginButton" runat="server" OnClick="loginButton_Click" Text="Login" Visible="False" />
+                    <asp:Button ID="loginButton" runat="server" OnClick="loginButton_Click" Text="Login" Visible="False" Height="45px" Width="125px" />
                 </td>
             </tr>
             <tr>
-                <td>
-                    <asp:RadioButton ID="RadioButton1" runat="server" AutoPostBack="True" OnCheckedChanged="RadioButton1_CheckedChanged" Text="Login page" />
+                <td class="auto-style3">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Login Page</asp:HyperLink>
                 </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style3">
+                    &nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
         </table>
