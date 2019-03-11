@@ -17,8 +17,8 @@ namespace flashCards
                 Label3.Text = Session["category"].ToString();
                 Label4.Text = Session["subject"].ToString();
                 Label5.Text = Session["choice"].ToString();
-                Label8.Text = GridView4.Rows[0].Cells[3].Text;
-                Label10.Text = GridView4.Rows[0].Cells[4].Text;
+                Label8.Text = GridView4.Rows[0].Cells[4].Text;
+                Label10.Text = GridView4.Rows[0].Cells[5].Text;
                 Session["count"] = 0;
                 Session["correct"] = 0;
                 Button2.Visible = false;
@@ -72,8 +72,8 @@ namespace flashCards
             
             if (count < GridView4.Rows.Count)
             {
-                Label8.Text = GridView4.Rows[count].Cells[3].Text;
-                Label10.Text = GridView4.Rows[count].Cells[4].Text;
+                Label8.Text = GridView4.Rows[count].Cells[4].Text;
+                Label10.Text = GridView4.Rows[count].Cells[5].Text;
             }
             else
             {

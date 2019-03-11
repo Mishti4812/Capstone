@@ -30,12 +30,21 @@ namespace flashCards
                 x.Catagory = TextBox2.Text;
                 x.Section = TextBox3.Text;
                 
-               
-             
+                if (Session["private"].ToString() == "yes")
+                {
+                    x.Private = true;
+                }
+                else
+                {
+                    x.Private = false;
+                }
+
+
                 x.Question = TextBox5.Text;
                 x.Answer = TextBox6.Text;
                 x.CreatedBy = Session["Sess_UserName"].ToString();
                 counter = x.CreateFlashcard();
+              
                 if (counter == 1)
                 {
                     Label7.Text = "<h1> Question is added succesfuly </h1>";
@@ -61,6 +70,15 @@ namespace flashCards
 
             try
             {
+                if (Session["private"].ToString() == "yes")
+                {
+                    y.Private = true;
+                }
+                else
+                {
+                    y.Private = false;
+                }
+                
                 y.Name = TextBox1.Text;
                 y.Category = TextBox2.Text;
                 y.Subject = TextBox3.Text;
@@ -78,14 +96,40 @@ namespace flashCards
             }
             Button2.Visible = false;
             Button3.Visible = true;
+            Label1.Visible = false;
+            Label2.Visible = false;
+            Label3.Visible = false;
+            Label4.Visible = false;
+            TextBox1.Visible = false;
+            TextBox2.Visible = false;
+            TextBox3.Visible = false;
+            RadioButton1.Visible = false;
+            RadioButton2.Visible = false;
+            Button3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            TextBox5.Visible = true;
+            TextBox6.Visible = true;
+            Button1.Visible = true;
+            Button4.Visible = true;
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
             Label7.Text = "";
             Button3.Visible = false;
-            Button2.Visible = true;
+            
             TextBox1.Visible = false;
+        }
+
+        protected void RadioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            Session["private"] = "no";
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
         }
     }
    

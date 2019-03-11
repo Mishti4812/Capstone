@@ -21,31 +21,34 @@ namespace flashCards
             int counter = 0;
             try
             {
-                if (TextBox2.Text == TextBox3.Text)
-                {
-                    x.UserName = TextBox1.Text;
-                    x.Password = TextBox2.Text;
-                    if (x.Password == "")
+                
+                
+                    if (TextBox2.Text == TextBox3.Text)
                     {
-                        x.Password = null;
-                    }
-                    x.Email = TextBox4.Text;
-                    if (x.Email == "")
-                    {
-                        x.Email = null;
-                    }
-                    counter = x.CreateUser();
+                        x.UserName = TextBox1.Text;
+                        x.Password = TextBox2.Text;
+                        if (x.Password == "")
+                        {
+                            x.Password = null;
+                        }
+                        x.Email = TextBox4.Text;
+                        if (x.Email == "")
+                        {
+                            x.Email = null;
+                        }
+                        counter = x.CreateUser();
 
-                    if (counter == 1)
-                    {
-                        Label1.Text = "<h1>Your account has been created!</h1>";
-                        loginButton.Visible = true;
+                        if (counter == 1)
+                        {
+                            Label1.Text = "<h1>Your account has been created!</h1>";
+                            loginButton.Visible = true;
+                        }
                     }
-                }
-                else
-                {
-                    Label1.Text = "<h1> Confirm password again!</h1>";
-                }
+                    else
+                    {
+                        Label1.Text = "<h1> Confirm password again!</h1>";
+                    }
+                
 
             }
             catch (Exception ex)
@@ -71,9 +74,51 @@ namespace flashCards
             Response.Redirect("Login.aspx");
         }
 
-       /* protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            Response.Redirect("Login.aspx");
-        }*/
+           /* string x = TextBox2.Text.Trim();
+            if (x.Length < 4 )
+            {
+                args.IsValid = false;
+            }
+            /*for (int i = 0; i < x.Length; i++)
+            {
+                if (char.IsUpper(x[i]))
+                {
+                    for (int j = 0; j < x.Length; j++)
+                    {
+                        if (char.IsDigit(x[j]))
+                        {
+                            args.IsValid = true;
+                        }
+                        else
+                        {
+                            args.IsValid = false;
+                        }
+                    }
+                }
+                else
+                {
+                    args.IsValid = false;
+                }
+            }*/
+        }
+
+        protected void CustomValidator1_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+            string x = TextBox2.Text.Trim();
+            if (x.Length < 4)
+            {
+                args.IsValid = false;
+                
+            }
+            else
+            {
+                args.IsValid = true;
+                
+            }
+            
+
+        }
     }
 }

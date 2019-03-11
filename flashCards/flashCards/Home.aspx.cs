@@ -98,5 +98,10 @@ namespace flashCards
         {
             Response.Redirect("Report.aspx");
         }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Edit.aspx");
+        }
     }
     }

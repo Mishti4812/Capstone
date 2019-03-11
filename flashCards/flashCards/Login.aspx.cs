@@ -17,14 +17,14 @@ namespace flashCards
         protected void Button1_Click(object sender, EventArgs e)
         {
             UserDetails x = new UserDetails();
-            x.UserName = TextBox1.Text;
+            x.UserName = TextBox3.Text;
             x.Password = TextBox2.Text;
 
             int Counter = x.CheckCredentials();
 
             if (Counter == 1)
             {
-                Session["Sess_UserName"] = TextBox1.Text;
+                Session["Sess_UserName"] = TextBox3.Text;
                 Session["Sess_Password"] = TextBox2.Text;
                 Response.Redirect("Home.aspx");
 

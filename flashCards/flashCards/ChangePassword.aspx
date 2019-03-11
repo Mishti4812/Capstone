@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="flashCards.ChangePassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Theme ="Theme1" Inherits="flashCards.ChangePassword" %>
+
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
 
 <!DOCTYPE html>
 
@@ -30,16 +32,29 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div> <body bgcolor =" #DBDBDB"></body></div>
         <table class="auto-style1">
+            <tr>
+                <td class="auto-style4" colspan="3">
+                    <uc1:WebUserControl1 ID="WebUserControl12" runat="server" />
+                </td>
+            </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style4">
-                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="16px">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticSubMenuIndent="10px" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000">
+                        <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#FFFBD6" />
+                        <DynamicSelectedStyle BackColor="#FFCC66" />
                         <Items>
                             <asp:MenuItem NavigateUrl="~/Home.aspx" Text="HomePage" Value="HomePage"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/Login.aspx" Text="SignOUt" Value="SignOUt"></asp:MenuItem>
                         </Items>
+                        <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#FFCC66" />
                     </asp:Menu>
                 </td>
             </tr>
@@ -79,11 +94,9 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style5">
-                    <asp:RadioButton ID="RadioButton1" runat="server" AutoPostBack="True" OnCheckedChanged="RadioButton1_CheckedChanged" Text="HomePage" />
-                </td>
+                    &nbsp;</td>
                 <td>
-                    <asp:RadioButton ID="RadioButton2" runat="server" AutoPostBack="True" OnCheckedChanged="RadioButton2_CheckedChanged" Text="SignOut" />
-                </td>
+                    &nbsp;</td>
             </tr>
         </table>
     </form>

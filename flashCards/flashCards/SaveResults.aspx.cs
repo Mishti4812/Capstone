@@ -47,9 +47,14 @@ namespace flashCards
             Label4.Text = Session["category"].ToString();
             Label5.Text = Session["subject"].ToString();
             Label6.Text = Session["complete"].ToString();
-            Label7.Text = Session["correctPercentage"].ToString();
-            Label8.Text = "NULL";
-            Label9.Text = DateTime.Now.ToString("mm/dd/yyyy");
+         
+                Label7.Text = Session["correctPercentage"].ToString();
+
+            
+            
+            Label8.Text = "-1";
+            //Label9.Text = DateTime.Now.ToString("mm/dd/yyyy");
+            Label9.Text = DateTime.Now.ToShortDateString();
 
         }
 

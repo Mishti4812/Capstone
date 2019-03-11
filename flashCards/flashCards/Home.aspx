@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="flashCards.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Theme ="Theme1" Inherits="flashCards.Home" %>
+
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
 
 <!DOCTYPE html>
 
@@ -9,14 +11,8 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            width: 385px;
-        }
         .auto-style4 {
-            width: 163px;
-        }
-        .auto-style5 {
-            width: 79px;
+            width: 260px;
         }
         .auto-style6 {
             width: 100%;
@@ -36,31 +32,97 @@
         .auto-style13 {
             width: 554px;
         }
-        .auto-style14 {
-            height: 10px;
+        .auto-style16 {
+            height: 46px;
         }
-        .auto-style15 {
-            width: 385px;
-            height: 10px;
+        .auto-style19 {
+            width: 260px;
+            height: 46px;
+        }
+        .auto-style23 {
+            height: 33px;
+            width: 13px;
+        }
+        .auto-style28 {
+            height: 46px;
+            width: 140px;
+        }
+        .auto-style29 {
+            width: 140px;
+        }
+        .auto-style30 {
+            width: 399px;
+        }
+        .auto-style31 {
+            width: 13px;
+        }
+        .auto-style32 {
+            height: 46px;
+            width: 13px;
+        }
+        .auto-style33 {
+            height: 186px;
+        }
+        .auto-style34 {
+            width: 140px;
+            height: 28px;
+        }
+        .auto-style35 {
+            width: 399px;
+            height: 28px;
+        }
+        .auto-style36 {
+            height: 28px;
+        }
+        .auto-style37 {
+            width: 13px;
+            height: 4px;
+        }
+        .auto-style38 {
+            width: 211px;
+        }
+        .auto-style39 {
+            width: 38px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div> <body bgcolor =" #DBDBDB"></body></div>
         <table class="auto-style1">
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style2">
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                <td colspan="7" class="auto-style33">
+                    <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
                 </td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>
-                    <asp:Menu ID="Menu1" runat="server" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" Orientation="Horizontal" StaticSubMenuIndent="10px">
-                        <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+            </tr>
+            <tr>
+                <td class="auto-style29" colspan="2">&nbsp;</td>
+                <td class="auto-style30">
+                    <asp:Menu ID="Menu2" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" StaticSubMenuIndent="10px" Orientation="Horizontal">
+                        <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
                         <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                        <DynamicMenuStyle BackColor="#F7F6F3" />
-                        <DynamicSelectedStyle BackColor="#5D7B9D" />
+                        <DynamicMenuStyle BackColor="#FFFBD6" />
+                        <DynamicSelectedStyle BackColor="#FFCC66" />
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/CreatFlashcard.aspx" Text="Create FlashCards" Value="Create FlashCards"></asp:MenuItem>
+                            <asp:MenuItem Text="Edit Flashcards" Value="Edit Flashcards">
+                                <asp:MenuItem NavigateUrl="~/Edit.aspx" Text="Public" Value="Public"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/EditMyFlashcard.aspx" Text="My FlashCards" Value="My FlashCards"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Report.aspx" Text="Report Card" Value="Report Card"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <StaticSelectedStyle BackColor="#FFCC66" />
+                    </asp:Menu>
+                </td>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="2">
+                    <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" Orientation="Horizontal" StaticSubMenuIndent="10px">
+                        <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        <DynamicMenuStyle BackColor="#FFFBD6" />
+                        <DynamicSelectedStyle BackColor="#FFCC66" />
                         <Items>
                             <asp:MenuItem NavigateUrl="~/Login.aspx" Text="SignOUt" Value="SignOUt"></asp:MenuItem>
                             <asp:MenuItem Text="Manage Profile" Value="Manage Profile">
@@ -69,60 +131,80 @@
                                 <asp:MenuItem NavigateUrl="~/Unsubscribe.aspx" Text="Unsubscribe" Value="Unsubscribe"></asp:MenuItem>
                             </asp:MenuItem>
                         </Items>
-                        <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                        <StaticHoverStyle BackColor="#990000" ForeColor="White" />
                         <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
-                        <StaticSelectedStyle BackColor="#5D7B9D" />
+                        <StaticSelectedStyle BackColor="#FFCC66" />
                     </asp:Menu>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style14"></td>
-                <td class="auto-style15">
-                    <asp:Label ID="Label6" runat="server" Visible="False"></asp:Label>
+                <td class="auto-style29" colspan="2"></td>
+                <td class="auto-style30">
+                    &nbsp;</td>
+                <td class="auto-style31"></td>
+                <td class="auto-style4" colspan="2"></td>
+                <td>
                 </td>
-                <td colspan="2" class="auto-style14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Label ID="Label5" runat="server"></asp:Label>
+            </tr>
+            <tr>
+                <td class="auto-style34" colspan="2"></td>
+                <td class="auto-style35">
+                </td>
+                <td colspan="3" class="auto-style36">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <br />
                     </td>
-                <td class="auto-style14"></td>
+                <td class="auto-style36"></td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style2">
-                    <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Creat Flashcard" />
+                <td class="auto-style38" rowspan="2">&nbsp;</td>
+                <td class="auto-style39">&nbsp;</td>
+                <td class="auto-style30">
+                    <asp:Label ID="Label5" runat="server"></asp:Label>
                 </td>
-                <td class="auto-style5">
+                <td class="auto-style23">
+                </td>
+                <td class="auto-style4" colspan="2" rowspan="2">
+                    &nbsp;</td>
+                <td rowspan="2">
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style39">
                     <asp:Label ID="Label3" runat="server" Text="Category"></asp:Label>
                 </td>
-                <td class="auto-style4">
+                <td class="auto-style30">
                     <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="True" Height="32px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" Width="151px">
+                        <asp:ListItem>Select</asp:ListItem>
                     </asp:DropDownList>
                 </td>
+                <td class="auto-style37">
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style29" colspan="2">&nbsp;</td>
+                <td class="auto-style30" rowspan="3">
+                    &nbsp;</td>
+                <td class="auto-style31">
+                    &nbsp;</td>
+                <td class="auto-style4" colspan="2">
+                    &nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
             <tr>
+                <td class="auto-style29" colspan="2">&nbsp;</td>
+                <td class="auto-style31">&nbsp;</td>
+                <td class="auto-style4" colspan="2">&nbsp;</td>
                 <td>&nbsp;</td>
-                <td class="auto-style2">
-                    <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Report Card" />
-                </td>
-                <td class="auto-style5">
-                    <asp:Label ID="Label4" runat="server" Text="Subject"></asp:Label>
-                </td>
-                <td class="auto-style4">
-                    <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="True" Height="16px" Width="152px" DataSourceID="SqlDataSource1" DataTextField="subject" DataValueField="subject" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
-                        <asp:ListItem>Subject</asp:ListItem>
-                    </asp:DropDownList>
-                </td>
-                <td>
-                    &nbsp;</td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style4">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style28" colspan="2">
+                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                    <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Ok" CssClass="auto-style11" Visible="False" Width="74px" />
+                            </td>
+                <td class="auto-style32"></td>
+                <td class="auto-style19" colspan="2"></td>
+                <td class="auto-style16"></td>
             </tr>
         </table>
         <div>
@@ -144,11 +226,9 @@
                         <tr>
                             <td class="auto-style13">&nbsp;</td>
                             <td class="auto-style12">
-                                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                            </td>
+                                &nbsp;</td>
                             <td>
-                    <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Ok" CssClass="auto-style11" Visible="False" Width="74px" />
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="auto-style13">&nbsp;</td>
@@ -177,11 +257,21 @@
                     &nbsp;</td>
             </tr>
             <tr>
+                <td>
+                    <asp:Label ID="Label6" runat="server" Visible="False"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+                </td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
                 <td>&nbsp;</td>
                 <td>
                     &nbsp;</td>
             </tr>
         </table>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
