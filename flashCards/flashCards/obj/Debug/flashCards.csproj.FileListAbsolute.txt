@@ -54,3 +54,11 @@ C:\Users\melkam\Desktop\flashCards\flashCards\obj\Debug\flashCards.csproj.CoreCo
 C:\Users\melkam\Desktop\flashCards\flashCards\obj\Debug\flashCards.csproj.CopyComplete
 C:\Users\melkam\Desktop\flashCards\flashCards\obj\Debug\flashCards.dll
 C:\Users\melkam\Desktop\flashCards\flashCards\obj\Debug\flashCards.pdb
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\Newtonsoft.Json.dll
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Net.Http.Formatting.dll
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Web.Http.dll
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Web.Http.WebHost.dll
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\Newtonsoft.Json.xml
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Net.Http.Formatting.xml
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Web.Http.xml
+C:\Users\melkam\Desktop\flashCards\flashCards\bin\System.Web.Http.WebHost.xml

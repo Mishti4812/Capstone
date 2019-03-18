@@ -22,13 +22,31 @@ namespace flashCards
                 {
                     Response.Redirect("Login.aspx");
                 }
+                
             }
+            
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+            string x = "1";
             Label3.Visible = false;
+            x = GridView1.Rows.Count.ToString();
+            Label4.Visible = false;
+
+
+            if ( x == "0")
+            {
+                Label4.Visible = true;
+                Label4.Text = "<h1> No Result was found </h1>";
+            }
+            else
+            {
+                Label4.Visible = false;
+            }
             
+         
+             
         }
         
     }

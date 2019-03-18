@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SaveResults.aspx.cs" Inherits="flashCards.SaveResults" %>
 
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,8 +25,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div> <body bgcolor =" #DBDBDB"></body></div>
         <div>
             <table class="auto-style2">
+                <tr>
+                    <td colspan="4">
+                        <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
+                    </td>
+                </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="Label1" runat="server" Text="Do you want to rate this quiz ?"></asp:Label>

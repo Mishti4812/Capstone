@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Study.aspx.cs" Inherits="flashCards.Study" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Study.aspx.cs" Theme="Theme1" Inherits="flashCards.Study" %>
+
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
 
 <!DOCTYPE html>
 
@@ -73,16 +75,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div> <body bgcolor =" #DBDBDB"></body></div>
         <table class="auto-style1">
             <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style9">&nbsp;</td>
-                <td class="auto-style11">&nbsp;</td>
-                <td class="auto-style10">&nbsp;</td>
-                <td class="auto-style11">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td colspan="8">
+                    <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
+                </td>
             </tr>
             <tr>
                 <td class="auto-style2">
@@ -214,8 +212,9 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
-        <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" DataKeyNames="SerialNo">
             <Columns>
+                <asp:BoundField DataField="SerialNo" HeaderText="SerialNo" SortExpression="SerialNo" InsertVisible="False" ReadOnly="True" />
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                 <asp:BoundField DataField="catagory" HeaderText="catagory" SortExpression="catagory" />
                 <asp:BoundField DataField="section" HeaderText="section" SortExpression="section" />
@@ -225,6 +224,12 @@
                 <asp:BoundField DataField="createdBy" HeaderText="createdBy" SortExpression="createdBy" />
             </Columns>
         </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:flaschcardConnectionString %>" SelectCommand="SELECT * FROM [questions1] WHERE ([name] = @name)">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="Label5" Name="name" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:flaschcardConnectionString %>" SelectCommand="SELECT * FROM [Questions] WHERE ([name] = @name)">
             <SelectParameters>
                 <asp:ControlParameter ControlID="Label5" Name="name" PropertyName="Text" Type="String" />

@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Unsubscribe.aspx.cs" Inherits="flashCards.Unsubscribe" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Unsubscribe.aspx.cs" Theme ="Theme1" Inherits="flashCards.Unsubscribe" %>
+
+<%@ Register src="WebUserControl1.ascx" tagname="WebUserControl1" tagprefix="uc1" %>
 
 <!DOCTYPE html>
 
@@ -24,8 +26,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div> <body bgcolor =" #DBDBDB"></body></div>
         <div>
             <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2" colspan="2">
+                        <uc1:WebUserControl1 ID="WebUserControl11" runat="server" />
+                    </td>
+                </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:Label ID="Label1" runat="server" Text="Are you sure you want to unsbscribe your account ?"></asp:Label>
