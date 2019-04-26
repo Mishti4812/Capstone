@@ -42,6 +42,7 @@
                     </td>
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Visible="False">
+                            <asp:ListItem>Select</asp:ListItem>
                             <asp:ListItem Value="4">Excelent</asp:ListItem>
                             <asp:ListItem Value="3">Very Good</asp:ListItem>
                             <asp:ListItem Value="2">Good</asp:ListItem>

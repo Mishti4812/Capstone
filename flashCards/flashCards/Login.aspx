@@ -6,9 +6,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8"/>
+
+    
+   
+
+
+
     <title></title>
-    
-    
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     
     <style type="text/css">
         .auto-style1 {
@@ -24,6 +33,7 @@
             width: 76px;
         }
     </style>
+    
 </head>
     
 <body>
@@ -31,7 +41,8 @@
     <form id="form1" runat="server">
         <div> <body bgcolor =" #DBDBDB"></body></div>
        
-        <table class="auto-style1">
+        <!-- <table class="auto-style1">-->
+       <table class ="table-responsive">
              
             <tr>
                 <td colspan="4">
@@ -107,6 +118,7 @@
         </div>
            
     </form>
+    
 </body>
          
 </html>

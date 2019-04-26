@@ -11,7 +11,7 @@ namespace flashCards
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            
 
         }
 
@@ -21,34 +21,46 @@ namespace flashCards
             int counter = 0;
             try
             {
-                
-                
-                    if (TextBox2.Text == TextBox3.Text)
+                string input = TextBox2.Text;
+                if (input.Length > 3)
+                {
+                    if (containsDigit(input) == true)
                     {
-                        x.UserName = TextBox1.Text;
-                        x.Password = TextBox2.Text;
-                        if (x.Password == "")
+                        if (TextBox2.Text == TextBox3.Text)
                         {
-                            x.Password = null;
-                        }
-                        x.Email = TextBox4.Text;
-                        if (x.Email == "")
-                        {
-                            x.Email = null;
-                        }
-                        counter = x.CreateUser();
+                            x.UserName = TextBox1.Text;
+                            x.Password = TextBox2.Text;
+                            if (x.Password == "")
+                            {
+                                x.Password = null;
+                            }
+                            x.Email = TextBox4.Text;
+                            if (x.Email == "")
+                            {
+                                x.Email = null;
+                            }
+                            counter = x.CreateUser();
 
-                        if (counter == 1)
+                            if (counter == 1)
+                            {
+                                Label1.Text = "<h1>Your account has been created!</h1>";
+                                loginButton.Visible = true;
+                            }
+                        }
+                        else
                         {
-                            Label1.Text = "<h1>Your account has been created!</h1>";
-                            loginButton.Visible = true;
+                            Label1.Text = "<h1> Confirm password again!</h1>";
                         }
                     }
                     else
                     {
-                        Label1.Text = "<h1> Confirm password again!</h1>";
+                        Label1.Text = "<h1> PassWord should contain at least one digit!</h1>";
                     }
-                
+                }
+                else
+                {
+                    Label1.Text = "<h1> The length of the Password should be at least 4!</h1>";
+                }
 
             }
             catch (Exception ex)
@@ -73,52 +85,29 @@ namespace flashCards
         {
             Response.Redirect("Login.aspx");
         }
-
-        protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+        public bool containsDigit (string input)
         {
-           /* string x = TextBox2.Text.Trim();
-            if (x.Length < 4 )
+            int countDigit = 0;
+            foreach (char c in input)
             {
-                args.IsValid = false;
+                if (char.IsDigit(c))
+                {
+                    countDigit++;
+                }
             }
-            /*for (int i = 0; i < x.Length; i++)
+            if (countDigit > 0)
             {
-                if (char.IsUpper(x[i]))
-                {
-                    for (int j = 0; j < x.Length; j++)
-                    {
-                        if (char.IsDigit(x[j]))
-                        {
-                            args.IsValid = true;
-                        }
-                        else
-                        {
-                            args.IsValid = false;
-                        }
-                    }
-                }
-                else
-                {
-                    args.IsValid = false;
-                }
-            }*/
-        }
-
-        protected void CustomValidator1_ServerValidate1(object source, ServerValidateEventArgs args)
-        {
-            string x = TextBox2.Text.Trim();
-            if (x.Length < 4)
-            {
-                args.IsValid = false;
-                
+                return true;
             }
             else
             {
-                args.IsValid = true;
-                
+                return false;
             }
-            
-
         }
+
+       
+        
+
+     
     }
 }

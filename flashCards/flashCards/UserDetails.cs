@@ -176,6 +176,45 @@ namespace flashCards
             }
             return (counter);
         }
+        public int inactive()
+        {
+            SqlConnection cn = null;
+            SqlCommand cmd = null;
+            int counter = 0;
+            try
+            {
+                cn = new SqlConnection();
+                cn.ConnectionString = "data source=.;initial catalog=flaschcard;integrated security=true;";
+
+                cmd = new SqlCommand();
+                cmd.Connection = cn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[USP_inactive]";
+
+                cmd.Parameters.AddWithValue("@UserName", UserName);
+
+
+
+                cn.Open();
+                counter = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+            finally
+            {
+                if (cn != null)
+                {
+                    cn.Close();
+                    cn.Dispose();
+                    cn = null;
+                }
+
+            }
+            return (counter);
+        }
 
     }
 }

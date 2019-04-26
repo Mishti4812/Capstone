@@ -24,26 +24,31 @@ namespace flashCards
                 }
                 
             }
+           // Label4.Visible = false;
+            
             
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            string x = "1";
-            Label3.Visible = false;
-            x = GridView1.Rows.Count.ToString();
-            Label4.Visible = false;
+            //Label4.Visible = false;
+           // string x = "1";
+           // Label3.Visible = false;
+           // x = GridView1.Rows.Count.ToString();
+           // int y = GridView1.Rows.Count;
 
+            //Label4.Text = y.ToString();
 
-            if ( x == "0")
+            /*if ( x == "0")
             {
                 Label4.Visible = true;
-                Label4.Text = "<h1> No Result was found </h1>";
+                //Label4.Text = "<h1> No Result was found </h1>";
+                //Label4.Text = x;
             }
-            else
+            else if (x == "1")
             {
-                Label4.Visible = false;
-            }
+                //Label4.Visible = false;
+            }*/
             
          
              
